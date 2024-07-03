@@ -2,7 +2,42 @@ body {
     font-family: "Montserrat", sans-serif;
 }
 
+.layout {
+    display: grid;
+    grid-template-columns: minmax(16px, auto) minmax (288px, 1200px) minmax (16px, auto);
+    grid-template-rows: auto 1px 1fr auto;
+    grid-template-areas:
+    ". header . "
+    "header_line header_line header_line"
+    ". content    . "
+    "footer footer footer"
+}
 /*header*/
+.header {
+    grid-area: header;
+    height: 56px;
+}
+
+/*iPhone SE*/
+@media screen and (min-width: 375px) {
+    
+}
+
+/*iPhone 11*/
+@media screen and (min-width: 414px) {
+    .header{
+      height: 72px;
+    }
+    
+}
+
+/*iPad min*/
+@media  screen and (min-width: 768px) {
+   .header {
+     height: 76px;
+   }
+}
+
 
 .header__layout {
     display: flex;
@@ -66,4 +101,91 @@ body {
     .header__logo {
         width: 51px;
     }
+}
+
+.breadcrumb__item {
+    list-style: none;
+    color: #333333;
+    font-size: 12px;
+    line-height: 18px;
+    display: flex;
+    gap: 4px;
+    align-items: center;
+}
+
+.breadcrumb__item::after {
+    content: ' ';
+    background-image: url('/images/arrow.svg');
+    background-position: center;
+    background-repeat: no-repeat;
+    height: 16px;
+    width: 16px;
+}
+.breadcrumb__item:nth-of-type(even) {
+     margin-left: 8px;
+}
+
+.content__header {
+    font-size: 24px;
+    margin-top: 24px;
+}
+
+/*iPhone SE*/
+
+@media screen and (min-width: 375px) {
+    .content__header {
+        margin-top: 32px;
+
+    } 
+}
+
+/*iPhone 11*/
+
+@media screen and (min-width: 414px) {
+    .content__header {
+        margin-top: 32px;
+    }
+}
+
+/*iPad min*/
+
+@media screen and (min-width: 768px) {
+    .content__header {
+        margin-top: 48px;
+    }
+}
+
+/*iPad Pro*/
+
+@media screen and (min-width: 1024px) {
+   
+}
+
+.articles-filter {
+    display: flex;
+    margin-top: 32px;
+    gap: 8px;
+    overflow-x: auto;
+    scrollbar-width: none;
+}
+
+/*iPhone 11*/
+@media screen and (min-width: 414px) {
+    .articles-filter {
+        flex-wrap: wrap;
+    }
+}
+
+.articles-filter__item {
+    border-radius: 24px;
+    padding: 6px 8px;
+    flex-wrap: nowrap;
+    white-space: nowrap;
+    font-size: 14px;
+    cursor: pointer;
+    box-shadow: #16C8BB 0px 0px 0px 1px inset;
+}
+
+.articles-filter__item:hover {
+    box-shadow: #16C8BB 0px 0px 0px 2px inset;
 }

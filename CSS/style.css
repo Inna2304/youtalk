@@ -1,3 +1,50 @@
 body {
     font-family: "Montserrat", sans-serif;
 }
+
+/*header*/
+.header__layout {
+    display: flex;
+    justify-content: space-between;
+}
+
+.header > div {
+    height: 56px;
+    align-items: center;
+} 
+
+/*iPhone SE*/
+@media screen and (min-width: 375px) {
+    
+}
+
+/*iPhone 11*/
+@media screen and (min-width: 414px) {
+    .header>div {
+        height: 72px;
+    }
+    
+}
+
+/*iPad min*/
+
+/*Кнопка не видна до 1024*/
+.header__button {
+    display: none;
+}
+
+@media screen and (min-width: 1024px) {
+    .header__button {
+        display: block;
+    }
+}
+
+.header__logo {
+    width:48px;
+}
+
+@media screen and (min-width: 768px) {
+    .header__logo {
+        width: 51px;
+    }
+}
